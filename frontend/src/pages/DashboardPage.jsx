@@ -65,8 +65,8 @@ export default function DashboardPage() {
   useEffect(() => {
     setLoading(true);
     const params = {
-      city_id: selectedCity,
-      station_id: selectedStation,
+      city_id: selectedCity !== 'ALL' ? selectedCity : undefined,
+      station_id: selectedStation !== 'ALL' ? selectedStation : undefined,
       aggregation: aggregation,
       start_date: startDate,
       end_date: endDate
@@ -76,13 +76,17 @@ export default function DashboardPage() {
       api.getDashboardSummary(params),
       api.getHistoricalTrends(params),
       api.getCityComparisons({ start_date: startDate, end_date: endDate }),
-      api.getAQICategories({ city_id: selectedCity, start_date: startDate, end_date: endDate })
+      api.getAQICategories({
+        city_id: selectedCity !== 'ALL' ? selectedCity : undefined,
+        start_date: startDate,
+        end_date: endDate
+      })
     ])
       .then(([summaryRes, trendsRes, compRes, catRes]) => {
         setKpis(summaryRes);
-        setTrends(trendsRes);
-        setComparisons(compRes);
-        setCategories(catRes);
+        setTrends(trendsRes || []);
+        setComparisons(compRes || []);
+        setCategories(catRes || []);
         setLoading(false);
       })
       .catch(err => {
@@ -224,14 +228,14 @@ export default function DashboardPage() {
           </div>
           <div className="mt-2 flex items-baseline space-x-2">
             <span className="text-3xl font-extrabold text-white">
-              {kpis?.average_aqi !== null ? Math.round(kpis?.average_aqi) : '—'}
+              {kpis?.average_aqi != null && !isNaN(kpis.average_aqi) ? Math.round(kpis.average_aqi) : (loading ? '...' : '—')}
             </span>
             <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${aqiInfo.bgClass}`}>
-              {kpis?.aqi_category || 'N/A'}
+              {kpis?.aqi_category || (loading ? 'Loading' : 'N/A')}
             </span>
           </div>
           <p className="text-[10px] text-slate-400 mt-2 truncate">
-            {kpis?.data_quality_note}
+            {kpis?.data_quality_note || (loading ? 'Querying sensor records...' : 'No data')}
           </p>
         </div>
 
@@ -239,7 +243,7 @@ export default function DashboardPage() {
         <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
           <div className="flex items-center justify-between text-xs text-slate-400">
             <span>Change vs Prev</span>
-            {kpis?.pct_change_vs_prev_period !== null && kpis?.pct_change_vs_prev_period > 0 ? (
+            {kpis?.pct_change_vs_prev_period != null && kpis.pct_change_vs_prev_period > 0 ? (
               <TrendingUp className="w-4 h-4 text-rose-400" />
             ) : (
               <TrendingDown className="w-4 h-4 text-emerald-400" />
@@ -248,15 +252,15 @@ export default function DashboardPage() {
           <div className="mt-2 flex items-baseline space-x-1">
             <span
               className={`text-2xl font-extrabold ${
-                kpis?.pct_change_vs_prev_period === null
+                kpis?.pct_change_vs_prev_period == null || isNaN(kpis.pct_change_vs_prev_period)
                   ? 'text-slate-400'
-                  : kpis?.pct_change_vs_prev_period > 0
+                  : kpis.pct_change_vs_prev_period > 0
                   ? 'text-rose-400'
                   : 'text-emerald-400'
               }`}
             >
-              {kpis?.pct_change_vs_prev_period !== null
-                ? `${kpis?.pct_change_vs_prev_period > 0 ? '+' : ''}${kpis?.pct_change_vs_prev_period}%`
+              {kpis?.pct_change_vs_prev_period != null && !isNaN(kpis.pct_change_vs_prev_period)
+                ? `${kpis.pct_change_vs_prev_period > 0 ? '+' : ''}${kpis.pct_change_vs_prev_period}%`
                 : 'N/A'}
             </span>
           </div>
@@ -272,7 +276,7 @@ export default function DashboardPage() {
             <AlertTriangle className="w-4 h-4 text-rose-400" />
           </div>
           <div className="mt-2 text-2xl font-extrabold text-white">
-            {kpis?.max_aqi !== null ? kpis?.max_aqi : '—'}
+            {kpis?.max_aqi != null && !isNaN(kpis.max_aqi) ? Math.round(kpis.max_aqi) : (loading ? '...' : '—')}
           </div>
           <p className="text-[10px] text-slate-400 mt-2">
             Highest daily level in filtered span
@@ -286,7 +290,7 @@ export default function DashboardPage() {
             <Wind className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="mt-2 text-2xl font-extrabold text-white">
-            {kpis?.min_aqi !== null ? kpis?.min_aqi : '—'}
+            {kpis?.min_aqi != null && !isNaN(kpis.min_aqi) ? Math.round(kpis.min_aqi) : (loading ? '...' : '—')}
           </div>
           <p className="text-[10px] text-slate-400 mt-2">
             Minimum observation recorded
@@ -301,7 +305,7 @@ export default function DashboardPage() {
           </div>
           <div className="mt-2 flex items-baseline space-x-1">
             <span className="text-2xl font-extrabold text-white">
-              {kpis?.latest_pm25 !== null ? kpis?.latest_pm25 : '—'}
+              {kpis?.latest_pm25 != null && !isNaN(kpis.latest_pm25) ? kpis.latest_pm25 : (loading ? '...' : '—')}
             </span>
             <span className="text-[10px] text-slate-400">µg/m³</span>
           </div>
@@ -318,7 +322,7 @@ export default function DashboardPage() {
           </div>
           <div className="mt-2 flex items-baseline space-x-1">
             <span className="text-2xl font-extrabold text-white">
-              {kpis?.latest_pm10 !== null ? kpis?.latest_pm10 : '—'}
+              {kpis?.latest_pm10 != null && !isNaN(kpis.latest_pm10) ? kpis.latest_pm10 : (loading ? '...' : '—')}
             </span>
             <span className="text-[10px] text-slate-400">µg/m³</span>
           </div>

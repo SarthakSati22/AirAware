@@ -30,7 +30,13 @@ def compute_kpi_summary(
     elif end_date:
         query["date"] = {"$lte": end_date}
 
-    readings = list(db.air_quality_readings.find(query).sort("timestamp", -1))
+    # Optimized projection: only fetch fields required for calculation
+    projection = {
+        "aqi": 1, "pm25": 1, "pm10": 1, "no2": 1, "so2": 1, "co": 1, "o3": 1,
+        "date": 1, "timestamp": 1, "city_name": 1
+    }
+    cursor = db.air_quality_readings.find(query, projection)
+    readings = list(cursor)
 
     if not readings:
         return {
@@ -59,7 +65,11 @@ def compute_kpi_summary(
     max_aqi = int(df["aqi"].max())
     min_aqi = int(df["aqi"].min())
 
-    latest = readings[0]
+    # Fast fetch of the single most recent reading
+    latest = db.air_quality_readings.find_one(query, sort=[("timestamp", -1)])
+    if not latest:
+        latest = readings[-1]
+
     latest_pm25 = float(latest.get("pm25", 0.0))
     latest_pm10 = float(latest.get("pm10", 0.0))
     latest_no2 = float(latest.get("no2", 0.0))
@@ -69,6 +79,7 @@ def compute_kpi_summary(
 
     # Determine category
     def cat(val):
+        if val is None or math.isnan(val): return "N/A"
         if val <= 50: return "Good"
         elif val <= 100: return "Satisfactory"
         elif val <= 200: return "Moderate"
@@ -83,17 +94,19 @@ def compute_kpi_summary(
             d_start = datetime.strptime(start_date, "%Y-%m-%d")
             d_end = datetime.strptime(end_date, "%Y-%m-%d")
             duration = (d_end - d_start).days
-            prev_start = (d_start - timedelta(days=duration + 1)).strftime("%Y-%m-%d")
-            prev_end = (d_start - timedelta(days=1)).strftime("%Y-%m-%d")
+            if duration > 0 and duration < 730:
+                prev_start = (d_start - timedelta(days=duration + 1)).strftime("%Y-%m-%d")
+                prev_end = (d_start - timedelta(days=1)).strftime("%Y-%m-%d")
 
-            prev_query = dict(query)
-            prev_query["date"] = {"$gte": prev_start, "$lte": prev_end}
-            prev_readings = list(db.air_quality_readings.find(prev_query))
-            if prev_readings:
-                prev_df = pd.DataFrame(prev_readings)
-                prev_avg = float(prev_df["aqi"].mean())
-                if prev_avg > 0:
-                    pct_change = round(((avg_aqi - prev_avg) / prev_avg) * 100, 1)
+                prev_query = dict(query)
+                prev_query["date"] = {"$gte": prev_start, "$lte": prev_end}
+                prev_cursor = db.air_quality_readings.find(prev_query, {"aqi": 1})
+                prev_readings = list(prev_cursor)
+                if prev_readings:
+                    prev_df = pd.DataFrame(prev_readings)
+                    prev_avg = float(prev_df["aqi"].mean())
+                    if prev_avg > 0:
+                        pct_change = round(((avg_aqi - prev_avg) / prev_avg) * 100, 1)
         except Exception:
             pct_change = None
 
@@ -139,15 +152,16 @@ def get_historical_trends(
         query["date"] = {"$gte": start_date, "$lte": end_date}
 
     readings = list(db.air_quality_readings.find(query, {
-        "date": 1, "timestamp": 1, "aqi": 1, "pm25": 1, "pm10": 1,
+        "date": 1, "aqi": 1, "pm25": 1, "pm10": 1,
         "no2": 1, "so2": 1, "co": 1, "o3": 1
-    }).sort("date", 1))
+    }))
 
     if not readings:
         return []
 
     df = pd.DataFrame(readings)
     df["date"] = pd.to_datetime(df["date"])
+    df = df.sort_values("date").reset_index(drop=True)
 
     if aggregation == "monthly":
         df["period"] = df["date"].dt.to_period("M").astype(str)
