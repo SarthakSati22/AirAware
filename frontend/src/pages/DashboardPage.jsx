@@ -45,6 +45,7 @@ export default function DashboardPage() {
   const [comparisons, setComparisons] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // Load cities on mount
   useEffect(() => {
@@ -62,8 +63,9 @@ export default function DashboardPage() {
   }, [selectedCity]);
 
   // Fetch Dashboard Data
-  useEffect(() => {
+  const loadDashboard = () => {
     setLoading(true);
+    setError(null);
     const params = {
       city_id: selectedCity !== 'ALL' ? selectedCity : undefined,
       station_id: selectedStation !== 'ALL' ? selectedStation : undefined,
@@ -87,12 +89,18 @@ export default function DashboardPage() {
         setTrends(trendsRes || []);
         setComparisons(compRes || []);
         setCategories(catRes || []);
+        setError(null);
         setLoading(false);
       })
       .catch(err => {
         console.error('Failed to load dashboard data:', err);
+        setError("Unable to connect to the analytics backend. Please make sure the backend server is running on port 8000.");
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    loadDashboard();
   }, [selectedCity, selectedStation, aggregation, startDate, endDate]);
 
   const handleResetFilters = () => {
@@ -126,6 +134,22 @@ export default function DashboardPage() {
           <span>Reset Filters</span>
         </button>
       </div>
+
+      {/* Connection Warning Banner if Server Offline */}
+      {error && (
+        <div className="p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40 flex items-center justify-between gap-4 text-xs">
+          <div className="flex items-center space-x-3 text-rose-300">
+            <AlertTriangle className="w-5 h-5 text-rose-400 shrink-0" />
+            <span>{error}</span>
+          </div>
+          <button
+            onClick={loadDashboard}
+            className="px-3 py-1.5 rounded-lg bg-rose-500 hover:bg-rose-400 text-slate-950 font-bold shrink-0 transition-all"
+          >
+            Retry Connection
+          </button>
+        </div>
+      )}
 
       {/* Filter Panel */}
       <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
