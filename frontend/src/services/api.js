@@ -41,7 +41,31 @@ export const api = {
   getExportUrl: (params) => {
     const query = new URLSearchParams(params).toString();
     return `/api/data/export?${query}`;
-  }
+  },
+
+  // Action Center APIs
+  getActionReports: (params) => apiClient.get('/action-center/reports', { params }),
+  submitActionReport: (payload) => apiClient.post('/action-center/reports', payload),
+  trackActionReport: (reportId) => apiClient.get(`/action-center/reports/${reportId}`),
+  updateActionReportStatus: (reportId, payload, adminToken) =>
+    apiClient.patch(`/action-center/reports/${reportId}/status`, payload, {
+      headers: { 'X-Admin-Token': adminToken },
+    }),
+  assignActionReportRemediation: (reportId, payload, adminToken) =>
+    apiClient.post(`/action-center/reports/${reportId}/actions`, payload, {
+      headers: { 'X-Admin-Token': adminToken },
+    }),
+  getActionAnalytics: (params) => apiClient.get('/action-center/analytics', { params }),
+  verifyAdminToken: (adminToken) =>
+    apiClient.post(
+      '/action-center/admin/verify',
+      {},
+      { headers: { 'X-Admin-Token': adminToken } }
+    ),
+  getActionExportUrl: (params) => {
+    const query = new URLSearchParams(params).toString();
+    return `/api/action-center/export?${query}`;
+  },
 };
 
 export default api;

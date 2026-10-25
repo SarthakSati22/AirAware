@@ -25,6 +25,7 @@ Directly aligned with **United Nations Sustainable Development Goals**:
 6. **Automated Statistical Insights:** Discovers pollution divides, winter smog inversion spikes, traffic signatures, and particulate combustion ratios.
 7. **Server-Side Data Explorer & CSV Export:** Searchable, multi-filtered, paginated dataset browser with streaming CSV export.
 8. **Dual-Mode Database Architecture:** Connects to **MongoDB Atlas Cloud** via `MONGODB_URI` or runs out-of-the-box with an embedded in-memory database containing 21,900 authentic historical records.
+9. **AirAware Action Center (Community Pollution Reporting & Hotspot Resolution):** Full citizen-to-authority governance workflow enabling anonymous reporting, explainable multi-factor prioritization scoring (0–100), spatial sensor correlation, administrative triage workstation, field remediation dispatching, and BDA resolution analytics.
 
 ---
 
@@ -138,12 +139,12 @@ npm run dev
 
 ## 🧪 Testing & Verification
 
-Run the comprehensive pytest suite covering API routes, calculations, and ML forecasting:
+Run the comprehensive pytest suite covering API routes, calculations, ML forecasting, and Action Center workflows:
 ```bash
 $env:PYTHONPATH="backend"
-python -m pytest backend/tests/test_api.py -v
+python -m pytest backend/tests/test_action_center.py backend/tests/test_api.py -v
 ```
-All 11 unit & integration tests pass with 100% success rate.
+All 19 unit & integration tests pass with 100% success rate.
 
 To run a production frontend build:
 ```bash
@@ -181,6 +182,7 @@ When demonstrating AirAware during a project review or presentation:
 5. **Data Insights (`/insights`):** Walk through statistical discoveries, including winter thermal inversions, weekday traffic signatures, and the cross-pollutant correlation matrix.
 6. **Model Evaluation (`/evaluation`):** Present the empirical benchmarking comparing the ML model against the persistence baseline, error residual histogram, and feature importances.
 7. **Data Explorer (`/explorer`):** Search and filter raw observations, paginate through records, and click **"Export Filtered CSV"** to demonstrate direct CSV file streaming.
+8. **Action Center (`/action-center`):** Demonstrate citizen pollution incident reporting with interactive map coordinate picking, view prioritized hotspots on the spatial reports map, track report status via Reference ID (`REP-2026-6819`), enter the administrative triage portal with the secret key (`airaware-admin-2026`), dispatch remediation tasks (inspections, water sprinklers, fine notices), and examine BDA resolution analytics.
 
 ---
 

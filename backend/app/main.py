@@ -19,6 +19,7 @@ from app.config import settings
 from app.database import get_database
 from app.routes.air_quality import router as air_quality_router
 from app.routes.forecasts import router as forecasts_router
+from app.routes.action_center import router as action_center_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -57,6 +58,7 @@ from fastapi.responses import FileResponse
 # Include Routers
 app.include_router(air_quality_router)
 app.include_router(forecasts_router)
+app.include_router(action_center_router)
 
 # Mount Frontend SPA if built
 frontend_dist = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"

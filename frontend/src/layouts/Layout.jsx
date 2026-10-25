@@ -15,7 +15,8 @@ import {
   HeartPulse,
   Building2,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  ShieldAlert
 } from 'lucide-react';
 import api from '../services/api';
 
@@ -23,6 +24,7 @@ const navItems = [
   { name: 'Home', path: '/', icon: Home },
   { name: 'Analytics Dashboard', path: '/dashboard', icon: BarChart3 },
   { name: 'Pollution Map', path: '/map', icon: MapPin },
+  { name: 'Action Center', path: '/action-center', icon: ShieldAlert },
   { name: 'AQI Prediction', path: '/prediction', icon: TrendingUp },
   { name: 'Data Insights', path: '/insights', icon: Lightbulb },
   { name: 'Model Evaluation', path: '/evaluation', icon: Cpu },

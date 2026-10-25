@@ -9,6 +9,7 @@ import InsightsPage from './pages/InsightsPage';
 import ModelEvaluationPage from './pages/ModelEvaluationPage';
 import DataExplorerPage from './pages/DataExplorerPage';
 import AboutPage from './pages/AboutPage';
+import ActionCenterPage from './pages/ActionCenterPage';
 
 export default function App() {
   return (
@@ -18,6 +19,8 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="map" element={<PollutionMapPage />} />
+          <Route path="action-center" element={<ActionCenterPage />} />
+          <Route path="action-center/:tab" element={<ActionCenterPage />} />
           <Route path="prediction" element={<PredictionPage />} />
           <Route path="insights" element={<InsightsPage />} />
           <Route path="evaluation" element={<ModelEvaluationPage />} />
