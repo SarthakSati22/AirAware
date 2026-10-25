@@ -1,0 +1,512 @@
+[
+  {
+    "station_id": "DEL-01",
+    "station_name": "ITO",
+    "city_id": "DEL",
+    "city_name": "Delhi",
+    "latitude": 28.6289,
+    "longitude": 77.2407,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "DEL-02",
+    "station_name": "Anand Vihar",
+    "city_id": "DEL",
+    "city_name": "Delhi",
+    "latitude": 28.6476,
+    "longitude": 77.3158,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "DEL-03",
+    "station_name": "R.K. Puram",
+    "city_id": "DEL",
+    "city_name": "Delhi",
+    "latitude": 28.5638,
+    "longitude": 77.1864,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "DEL-04",
+    "station_name": "Punjabi Bagh",
+    "city_id": "DEL",
+    "city_name": "Delhi",
+    "latitude": 28.674,
+    "longitude": 77.131,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "MUM-01",
+    "station_name": "Bandra Kurla Complex (BKC)",
+    "city_id": "MUM",
+    "city_name": "Mumbai",
+    "latitude": 19.0657,
+    "longitude": 72.8687,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "MUM-02",
+    "station_name": "Worli",
+    "city_id": "MUM",
+    "city_name": "Mumbai",
+    "latitude": 19.0178,
+    "longitude": 72.8188,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "MUM-03",
+    "station_name": "Colaba",
+    "city_id": "MUM",
+    "city_name": "Mumbai",
+    "latitude": 18.9067,
+    "longitude": 72.8147,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "MUM-04",
+    "station_name": "Kurla",
+    "city_id": "MUM",
+    "city_name": "Mumbai",
+    "latitude": 19.0726,
+    "longitude": 72.8845,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "BLR-01",
+    "station_name": "BTM Layout",
+    "city_id": "BLR",
+    "city_name": "Bengaluru",
+    "latitude": 12.9166,
+    "longitude": 77.6101,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "BLR-02",
+    "station_name": "Peenya Industrial Area",
+    "city_id": "BLR",
+    "city_name": "Bengaluru",
+    "latitude": 13.0285,
+    "longitude": 77.5197,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "BLR-03",
+    "station_name": "Silk Board Junction",
+    "city_id": "BLR",
+    "city_name": "Bengaluru",
+    "latitude": 12.9177,
+    "longitude": 77.6238,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "BLR-04",
+    "station_name": "City Railway Station",
+    "city_id": "BLR",
+    "city_name": "Bengaluru",
+    "latitude": 12.9784,
+    "longitude": 77.5694,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "KOL-01",
+    "station_name": "Victoria Memorial",
+    "city_id": "KOL",
+    "city_name": "Kolkata",
+    "latitude": 22.5448,
+    "longitude": 88.3426,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "KOL-02",
+    "station_name": "Rabindra Bharati University",
+    "city_id": "KOL",
+    "city_name": "Kolkata",
+    "latitude": 22.6277,
+    "longitude": 88.3797,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "KOL-03",
+    "station_name": "Jadavpur",
+    "city_id": "KOL",
+    "city_name": "Kolkata",
+    "latitude": 22.4988,
+    "longitude": 88.3718,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "KOL-04",
+    "station_name": "Fort William",
+    "city_id": "KOL",
+    "city_name": "Kolkata",
+    "latitude": 22.5542,
+    "longitude": 88.3375,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "HYD-01",
+    "station_name": "Sanathnagar",
+    "city_id": "HYD",
+    "city_name": "Hyderabad",
+    "latitude": 17.4563,
+    "longitude": 78.4439,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "HYD-02",
+    "station_name": "Nehru Zoological Park",
+    "city_id": "HYD",
+    "city_name": "Hyderabad",
+    "latitude": 17.3507,
+    "longitude": 78.4518,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "HYD-03",
+    "station_name": "Charminar",
+    "city_id": "HYD",
+    "city_name": "Hyderabad",
+    "latitude": 17.3616,
+    "longitude": 78.4747,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "HYD-04",
+    "station_name": "ICRISAT Patancheru",
+    "city_id": "HYD",
+    "city_name": "Hyderabad",
+    "latitude": 17.5111,
+    "longitude": 78.2752,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "CHN-01",
+    "station_name": "Alandur Bus Depot",
+    "city_id": "CHN",
+    "city_name": "Chennai",
+    "latitude": 13.0034,
+    "longitude": 80.2016,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "CHN-02",
+    "station_name": "Manali Industrial Zone",
+    "city_id": "CHN",
+    "city_name": "Chennai",
+    "latitude": 13.1667,
+    "longitude": 80.2667,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "CHN-03",
+    "station_name": "Velachery",
+    "city_id": "CHN",
+    "city_name": "Chennai",
+    "latitude": 12.9759,
+    "longitude": 80.2212,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "CHN-04",
+    "station_name": "Chennai Central",
+    "city_id": "CHN",
+    "city_name": "Chennai",
+    "latitude": 13.0823,
+    "longitude": 80.2755,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "AMD-01",
+    "station_name": "Maninagar",
+    "city_id": "AMD",
+    "city_name": "Ahmedabad",
+    "latitude": 22.9978,
+    "longitude": 72.6031,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "AMD-02",
+    "station_name": "Chandkheda",
+    "city_id": "AMD",
+    "city_name": "Ahmedabad",
+    "latitude": 23.1114,
+    "longitude": 72.5857,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "AMD-03",
+    "station_name": "Satellite",
+    "city_id": "AMD",
+    "city_name": "Ahmedabad",
+    "latitude": 23.0304,
+    "longitude": 72.5178,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "LKO-01",
+    "station_name": "Lalbagh",
+    "city_id": "LKO",
+    "city_name": "Lucknow",
+    "latitude": 26.8488,
+    "longitude": 80.9388,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "LKO-02",
+    "station_name": "Talkatora Industrial Area",
+    "city_id": "LKO",
+    "city_name": "Lucknow",
+    "latitude": 26.8329,
+    "longitude": 80.8974,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  },
+  {
+    "station_id": "LKO-03",
+    "station_name": "Aliganj",
+    "city_id": "LKO",
+    "city_name": "Lucknow",
+    "latitude": 26.8872,
+    "longitude": 80.9414,
+    "pollutants": [
+      "PM2.5",
+      "PM10",
+      "NO2",
+      "SO2",
+      "CO",
+      "O3"
+    ],
+    "source": "Central Pollution Control Board (CPCB) India"
+  }
+]

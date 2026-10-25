@@ -1,0 +1,270 @@
+[
+  {
+    "city_id": "DEL",
+    "city_name": "Delhi",
+    "state": "Delhi",
+    "country": "India",
+    "latitude": 28.6139,
+    "longitude": 77.209,
+    "region": "Northern",
+    "stations": [
+      {
+        "station_id": "DEL-01",
+        "station_name": "ITO",
+        "latitude": 28.6289,
+        "longitude": 77.2407
+      },
+      {
+        "station_id": "DEL-02",
+        "station_name": "Anand Vihar",
+        "latitude": 28.6476,
+        "longitude": 77.3158
+      },
+      {
+        "station_id": "DEL-03",
+        "station_name": "R.K. Puram",
+        "latitude": 28.5638,
+        "longitude": 77.1864
+      },
+      {
+        "station_id": "DEL-04",
+        "station_name": "Punjabi Bagh",
+        "latitude": 28.674,
+        "longitude": 77.131
+      }
+    ]
+  },
+  {
+    "city_id": "MUM",
+    "city_name": "Mumbai",
+    "state": "Maharashtra",
+    "country": "India",
+    "latitude": 19.076,
+    "longitude": 72.8777,
+    "region": "Western Coastal",
+    "stations": [
+      {
+        "station_id": "MUM-01",
+        "station_name": "Bandra Kurla Complex (BKC)",
+        "latitude": 19.0657,
+        "longitude": 72.8687
+      },
+      {
+        "station_id": "MUM-02",
+        "station_name": "Worli",
+        "latitude": 19.0178,
+        "longitude": 72.8188
+      },
+      {
+        "station_id": "MUM-03",
+        "station_name": "Colaba",
+        "latitude": 18.9067,
+        "longitude": 72.8147
+      },
+      {
+        "station_id": "MUM-04",
+        "station_name": "Kurla",
+        "latitude": 19.0726,
+        "longitude": 72.8845
+      }
+    ]
+  },
+  {
+    "city_id": "BLR",
+    "city_name": "Bengaluru",
+    "state": "Karnataka",
+    "country": "India",
+    "latitude": 12.9716,
+    "longitude": 77.5946,
+    "region": "Southern Plateau",
+    "stations": [
+      {
+        "station_id": "BLR-01",
+        "station_name": "BTM Layout",
+        "latitude": 12.9166,
+        "longitude": 77.6101
+      },
+      {
+        "station_id": "BLR-02",
+        "station_name": "Peenya Industrial Area",
+        "latitude": 13.0285,
+        "longitude": 77.5197
+      },
+      {
+        "station_id": "BLR-03",
+        "station_name": "Silk Board Junction",
+        "latitude": 12.9177,
+        "longitude": 77.6238
+      },
+      {
+        "station_id": "BLR-04",
+        "station_name": "City Railway Station",
+        "latitude": 12.9784,
+        "longitude": 77.5694
+      }
+    ]
+  },
+  {
+    "city_id": "KOL",
+    "city_name": "Kolkata",
+    "state": "West Bengal",
+    "country": "India",
+    "latitude": 22.5726,
+    "longitude": 88.3639,
+    "region": "Eastern",
+    "stations": [
+      {
+        "station_id": "KOL-01",
+        "station_name": "Victoria Memorial",
+        "latitude": 22.5448,
+        "longitude": 88.3426
+      },
+      {
+        "station_id": "KOL-02",
+        "station_name": "Rabindra Bharati University",
+        "latitude": 22.6277,
+        "longitude": 88.3797
+      },
+      {
+        "station_id": "KOL-03",
+        "station_name": "Jadavpur",
+        "latitude": 22.4988,
+        "longitude": 88.3718
+      },
+      {
+        "station_id": "KOL-04",
+        "station_name": "Fort William",
+        "latitude": 22.5542,
+        "longitude": 88.3375
+      }
+    ]
+  },
+  {
+    "city_id": "HYD",
+    "city_name": "Hyderabad",
+    "state": "Telangana",
+    "country": "India",
+    "latitude": 17.385,
+    "longitude": 78.4867,
+    "region": "Deccan",
+    "stations": [
+      {
+        "station_id": "HYD-01",
+        "station_name": "Sanathnagar",
+        "latitude": 17.4563,
+        "longitude": 78.4439
+      },
+      {
+        "station_id": "HYD-02",
+        "station_name": "Nehru Zoological Park",
+        "latitude": 17.3507,
+        "longitude": 78.4518
+      },
+      {
+        "station_id": "HYD-03",
+        "station_name": "Charminar",
+        "latitude": 17.3616,
+        "longitude": 78.4747
+      },
+      {
+        "station_id": "HYD-04",
+        "station_name": "ICRISAT Patancheru",
+        "latitude": 17.5111,
+        "longitude": 78.2752
+      }
+    ]
+  },
+  {
+    "city_id": "CHN",
+    "city_name": "Chennai",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "latitude": 13.0827,
+    "longitude": 80.2707,
+    "region": "Southern Coastal",
+    "stations": [
+      {
+        "station_id": "CHN-01",
+        "station_name": "Alandur Bus Depot",
+        "latitude": 13.0034,
+        "longitude": 80.2016
+      },
+      {
+        "station_id": "CHN-02",
+        "station_name": "Manali Industrial Zone",
+        "latitude": 13.1667,
+        "longitude": 80.2667
+      },
+      {
+        "station_id": "CHN-03",
+        "station_name": "Velachery",
+        "latitude": 12.9759,
+        "longitude": 80.2212
+      },
+      {
+        "station_id": "CHN-04",
+        "station_name": "Chennai Central",
+        "latitude": 13.0823,
+        "longitude": 80.2755
+      }
+    ]
+  },
+  {
+    "city_id": "AMD",
+    "city_name": "Ahmedabad",
+    "state": "Gujarat",
+    "country": "India",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "region": "Western Semi-Arid",
+    "stations": [
+      {
+        "station_id": "AMD-01",
+        "station_name": "Maninagar",
+        "latitude": 22.9978,
+        "longitude": 72.6031
+      },
+      {
+        "station_id": "AMD-02",
+        "station_name": "Chandkheda",
+        "latitude": 23.1114,
+        "longitude": 72.5857
+      },
+      {
+        "station_id": "AMD-03",
+        "station_name": "Satellite",
+        "latitude": 23.0304,
+        "longitude": 72.5178
+      }
+    ]
+  },
+  {
+    "city_id": "LKO",
+    "city_name": "Lucknow",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "region": "Gangetic Plain",
+    "stations": [
+      {
+        "station_id": "LKO-01",
+        "station_name": "Lalbagh",
+        "latitude": 26.8488,
+        "longitude": 80.9388
+      },
+      {
+        "station_id": "LKO-02",
+        "station_name": "Talkatora Industrial Area",
+        "latitude": 26.8329,
+        "longitude": 80.8974
+      },
+      {
+        "station_id": "LKO-03",
+        "station_name": "Aliganj",
+        "latitude": 26.8872,
+        "longitude": 80.9414
+      }
+    ]
+  }
+]

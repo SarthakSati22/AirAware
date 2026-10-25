@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  airaware:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: airaware-platform
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+      - DATABASE_NAME=airaware_db
+      - MONGODB_URI=${MONGODB_URI:-}
+    restart: unless-stopped
